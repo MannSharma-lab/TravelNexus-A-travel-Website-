@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scenery — Midnight Enchanted Lake</title>
+  <meta name="description" content="Scenery — curated scenic locations with a dark enchanted aura: glowing vines and water ripples.">
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- MAIN CSS (will be provided after your confirmation) -->
+  <link rel="stylesheet" href="css/scenery.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  
+  
+
+  <!-- Theme color for mobile -->
+  <meta name="theme-color" content="#061022" />
+</head>
+<body>
+  <!-- CANVAS LAYERS for JS animations (vines + ripples + subtle particles) -->
+  <!-- Stacked canvases so each animation type stays separate and performant -->
+  <canvas id="ripple-canvas" aria-hidden="true"></canvas>
+  <canvas id="vines-canvas" aria-hidden="true"></canvas>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Site header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="logo" href="home.html" aria-label="Scenery Home">TravelNexus | Scenery<span class="logo-mark">♦</span></a>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="package.html" class="cta">Packages</a></li>
+          <li><a href="book.html">Book</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO: dark enchanted lake vibe -->
+  <main id="main" role="main">
+    <section class="hero" aria-label="Scenery hero section">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Most Beautiful Scenery Locations</h1>
+          <p class="hero-lead">Discover hand-picked locations wrapped in twilight — where glowing vines meet moonlit ripples.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="package.html">Explore Packages</a>
+            <a class="btn btn-outline" href="about.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+  <!-- Loader -->
+  <div id="loading-screen">
+    <h1>Happy Journey</h1>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+    <!-- LOCATIONS GRID (glass cards that react to vine + ripple system) -->
+    <section class="locations" aria-label="Location highlights">
+      <div class="container">
+        <h2 class="section-title">Featured Destinations</h2>
+
+        <div class="locations-grid" id="locationsGrid">
+          <!-- Location card: repeatable pattern -->
+          <article class="location-card" data-card-index="0" tabindex="0">
+            <figure class="card-media">
+              <picture>
+                <img src="images/img-2.jpg">
+              </picture>
+            </figure>
+            <div class="card-body">
+              <h3 id="loc-amer-title">Most Beautiful Scenic Locations</h3>
+              <p>Let your footprints be your story, and the world your canvas.</p>
+              <div class="card-actions">
+                <a class="btn btn-small" href="book.html">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location-card" data-card-index="1" tabindex="0">
+            <figure class="card-media">
+              <picture>
+                <img src="images/street1.jpg">
+              </picture>
+            </figure>
+            <div class="card-body">
+              <h3 id="loc-kap-title">Scenic Heights</h3>
+              <p>Where mountains meet the sky in perfect harmony.</p>
+              <div class="card-actions">
+                <a class="btn btn-small" href="book.html">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location-card" data-card-index="2">
+            <figure class="card-media">
+              <picture>
+                <img src="images/river.jpg">
+              </picture>
+            </figure>
+            <div class="card-body">
+              <h3 id="loc-ganga-title">Tranquil Trails</h3>
+              <p>Mountains embracing rivers in serene landscapes.</p>
+              <div class="card-actions">
+                <a class="btn btn-small" href="book.html">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location-card" data-card-index="3" tabindex="0">
+            <figure class="card-media">
+              <picture>
+                <img src="images/Amer Fort-Jaipur.jpg">
+              </picture>
+            </figure>
+            <div class="card-body">
+              <h3 id="loc-cola-title">Historic Beauty</h3>
+              <p>Explore heritages with rivers flowing beside it.</p>
+              <div class="card-actions">
+                <a class="btn btn-small" href="book.html">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location-card" data-card-index="4">
+            <figure class="card-media">
+              <picture>
+                <img src="images/IMG_20250919_232641.jpg">
+              </picture>
+            </figure>
+            <div class="card-body">
+              <h3 id="loc-golden-title">Sunlit Serenity</h3>
+              <p>Under the golden light, love feels eternal.</p>
+              <div class="card-actions">
+                <a class="btn btn-small" href="book.html">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location-card" data-card-index="5" tabindex="0">
+            <figure class="card-media">
+              <picture>
+                <source srcset="images/New-Zealand-adventure-GettyImages-585144798.webp" type="image/webp">
+                <img src="images/New-Zealand-adventure-GettyImages-585144798.webp" alt="Jahangiri Palace, Agra" loading="lazy">
+              </picture>
+            </figure>
+            <div class="card-body">
+              <h3 id="loc-jahangiri-title">Eternal Heights</h3>
+              <p>Standing before the mountains, every heartbeat echoes with peace and wonder.</p>
+              <div class="card-actions">
+                <a class="btn btn-small" href="book.html">Book Now</a>
+              </div>
+            </div>
+          </article>
+        </div> <!-- /locations-grid -->
+      </div> <!-- /container -->
+    </section> <!-- /locations -->
+
+    <!-- OPTIONAL: RSVP / Quick contact strip -->
+    <section class="contact-strip" aria-label="Quick contact">
+      <div class="container">
+        <div class="strip-inner">
+          <p>Have a custom itinerary in mind? <strong>Contact our expert planners</strong></p>
+          <a class="btn btn-ghost" href="about.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="glow-divider" aria-hidden="true"></div>
+      <div class="footer-grid">
+        <div class="footer-box">
+          <h4>Quick Links</h4>
+          <a href="home.html"><i class="fas fa-angle-right"></i> Home</a>
+          <a href="about.html"><i class="fas fa-angle-right"></i> About</a>
+          <a href="package.html"><i class="fas fa-angle-right"></i> Packages</a>
+        </div>
+        <div class="footer-box">
+          <h4>Contact</h4>
+          <a href="tel:+1234567890"><i class="fas fa-phone"></i> +123 456 7890</a>
+          <a href="mailto:2023bcaaidsmann14707@poornima.edu.in"><i class="fas fa-envelope"></i> 2023bcaaidsmann14707@poornima.edu.in</a>
+        </div>
+        <div class="footer-box">
+          <h4>Follow</h4>
+          <a href="https://www.linkedin.com/in/mann-sharma-5425b9290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i>LinkedIn</a>
+          <a href="https://github.com/MannSharma-lab"><i class="fab fa-github"></i>Github</a>
+        </div>
+      </div>
+
+      <p class="credit">Created by Mann Sharma<strong> TravelNexus</strong> • © 2025<span id="year"></span></p>
+    </div>
+  </footer>
+
+  <!-- Core JS file (will be provided after CSS confirmation) -->
+  <script src="js/scenery.js" defer></script>
+  
+  
+  <script src="js/script.js"></script>
+  
+</body>
+</html>

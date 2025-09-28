@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TravelNexus | Luxury • </title>
+  <meta name="description" content="Luxury — premium scenic vibes with golden aura, dark theme and cinematic flow.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+
+  <!-- Core CSS  -->
+  <link rel="stylesheet" href="css/luxury.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#000000" />
+</head>
+<body class="obsidian-throne">
+
+  <!-- SVG filters -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="soften">
+        <feGaussianBlur stdDeviation="1.2" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Background canvases -->
+  <canvas id="canvas-cracks" class="bg-canvas" aria-hidden="true"></canvas>
+  <canvas id="canvas-particles" class="bg-canvas" aria-hidden="true"></canvas>
+  <canvas id="threejs-shards" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite">
+    <div class="preloader-inner">
+      <div class="loader-orb" aria-hidden="true"></div>
+      <span class="sr-only">Loading immersive experience…</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="home.html" class="logo" aria-label="Luxury Scenery Home">
+        <span class="logo-text">TravelNexus | Luxury</span>
+        <span class="logo-mark" aria-hidden="true">•</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="package.html"class="btn cta">Packages</a></li>
+          <li><a href="book.html">Book</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="main" role="main">
+    <section class="hero" id="hero">
+      <div class="hero-canvas-wrap" aria-hidden="true">
+        <div id="hero-orb" class="hero-orb" role="img" aria-label="Molten golden orb with crystal reflections"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1 class="luxury-title">Live the Luxury <span class="accent">•</span></h1>
+          <p class="luxury-lead">Experience premium destinations wrapped in golden elegance &amp; timeless style.</p>
+
+          <div class="hero-actions">
+            <a href="package.html" class="btn btn-primary">Explore Packages</a>
+            <a href="about.html" class="btn btn-outline">About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- Loader -->
+  <div id="loading-screen">
+    <h1>Happy Journey</h1>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  
+  
+    <!-- FEATURED DESTINATIONS -->
+    <section class="luxury-grid" id="destinations" aria-labelledby="destinations-heading">
+      <div class="container">
+        <h2 id="destinations-heading" class="section-title">Exclusive Destinations</h2>
+
+        <div class="cards" role="list">
+          <article class="lux-card" role="listitem" tabindex="0" aria-label="Royal Palace">
+            <div class="card-media">
+              <img src="images/luxury2.jpg" alt="Royal Palace" loading="lazy" width="800" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Luxury Resorts & Villas</h3>
+              <p>Indulge yourself in world class comfort & elegance.</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+
+          <article class="lux-card" role="listitem" tabindex="0" aria-label="Champagne Cruise">
+            <div class="card-media">
+              <img src="images/luxury1.jpg" alt="Champagne Cruise" loading="lazy" width="800" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Luxury Villa / Stay</h3>
+              <p>Exclusive Sanctuary- A secluded paradise for the world's elite.</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+		  
+		  <article class="lux-card" role="listitem" tabindex="0" aria-label="Champagne Cruise">
+            <div class="card-media">
+              <img src="images/taj-rambagh-palace-jaipur.jpg" alt="Champagne Cruise" loading="lazy" width="800" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Regal Retreat</h3>
+              <p>Where sophiscation and grandeur meet timeless elegance.</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+
+          <article class="lux-card" role="listitem" tabindex="0" aria-label="Champagne Cruise">
+            <div class="card-media">
+              <img src="images/Oberoi-Udaivilas.jpg" alt="Champagne Cruise" loading="lazy" width="800" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Prestigious Escape</h3>
+              <p>A heven of oplence designed for the refiend few.</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+
+          <article class="lux-card" role="listitem" tabindex="0" aria-label="Champagne Cruise">
+            <div class="card-media">
+              <img src="images/atlantis_the_palm_illuminated_310x400.jpg" alt="Champagne Cruise" loading="lazy" width="800" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Ocean Elegance</h3>
+              <p>Where opulence and beauty create a masterpiece.</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+		  
+		  <article class="lux-card" role="listitem" tabindex="0" aria-label="Champagne Cruise">
+            <div class="card-media">
+              <img src="images/1.jpg" alt="Champagne Cruise" loading="lazy" width="800" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Royal Legacy</h3>
+              <p>Where heritage and royalty embrace timeless grace.”</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+		  
+		  <article class="lux-card" role="listitem" tabindex="0" aria-label="Champagne Cruise">
+            <div class="card-media">
+              <img src="images/1081-Luxury-Holiday-Ideas-India.jpg" alt="Champagne Cruise" loading="lazy" width="800" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Lakeside Luxury</h3>
+              <p>Where luxury drifts across a golden lake.</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+
+          <article class="lux-card" role="listitem" tabindex="0" aria-label="Private Island">
+            <div class="card-media">
+              <img src="images/1085-Luxury-Holidays-in-India.jpg" alt="Private Island" loading="lazy" width="80" height="533">
+            </div>
+            <div class="card-body">
+              <h3>Royal Harmony</h3>
+              <p>Where royal grandeur opens into timeless serenity.</p>
+              <a href="book.html" class="btn btn-book">Book Now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORYTELLING -->
+    <section class="luxury-story" id="story" aria-labelledby="story-heading">
+      <div class="container">
+        <h2 id="story-heading">Every Detail Glows in Gold •</h2>
+        <p>Luxury isn’t just a place — it’s an aura. From golden sunsets to exclusive villas, this is where timeless stories are written.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="glow-divider" aria-hidden="true"></div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="package.html">Packages</a>
+		  <a href="book.html">Book</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+1234567890"><i class="fas fa-phone" aria-hidden="true"></i> +123 456 7890</a>
+          <a href="mailto:2023bcaaidsmann14707@poornima.edu.in"><i class="fas fa-envelope" aria-hidden="true"></i> 2023bcaaidsmann14707@poornima.edu.in</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="https://www.linkedin.com/in/mann-sharma-5425b9290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a href="https://github.com/MannSharma-lab"><i class="fab fa-github" aria-hidden="true"></i> Github</a>
+        </div>
+      </div>
+
+      <p class="credit">Created by Mann Sharma<strong> TravelNexus</strong> • © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript-warning">
+      This site uses advanced visuals. Please enable JavaScript for full experience.
+    </div>
+  </noscript>
+
+  <!-- Third-party libs -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.0/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Core JS -->
+  <script src="js/luxury.js" defer></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.addEventListener('load', function () {
+      const pre = document.getElementById('preloader');
+      if (pre) pre.classList.add('loaded');
+      setTimeout(() => pre && pre.remove(), 600);
+    });
+  </script>
+</body>
+</html>

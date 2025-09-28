@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adventure - Life's Unwritten Chapter</title>
+  <meta name="description" content="Youngsters page — Step into the Neon Wild: cyberpunk jungle vibes, interactive adventures, and glowing trails built for young explorers." />
+  <meta name="theme-color" content="#041018" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="css/adventure.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Prevent flash before canvas draws -->
+  <style>html { background: #030814 }</style>
+</head>
+<body>
+
+  <!-- CANVAS LAYERS -->
+  <canvas id="bg-orbs" aria-hidden="true"></canvas>
+  <canvas id="bgVines" aria-hidden="true"></canvas>
+  <canvas id="bgLeaves" aria-hidden="true"></canvas>
+  <canvas id="bgFauna" aria-hidden="true"></canvas>
+  <canvas id="postFX" aria-hidden="true"></canvas>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner" aria-label="Site header">
+    <div class="wrap header-inner">
+      <a class="logo" href="home.html">
+        <span class="logo-mark">🌴</span>TravelNexus | ADVENTURE
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="package.html">Packages</a></li>
+          <li><a class="cta" href="book.html">Book</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main" role="main">
+
+    <!-- HERO SECTION -->
+    <section class="hero" aria-label="Youngsters Hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Young Explorers</p>
+          <h1 class="hero-title" data-glow>Young Souls, Wild Trails</h1>
+          <p class="hero-sub">
+            Step into the Neon Wild — where adventure meets light. Vines react, fauna watches,
+            and every path glows with possibility.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="book.html" data-scroll>Start Adventure</a>
+            <a class="btn btn-ghost" href="package.html">Explore Packages</a>
+          </div>
+          <div class="hero-meter" aria-hidden="true">
+            <div class="meter-bar" data-i="0"></div>
+            <div class="meter-bar" data-i="1"></div>
+            <div class="meter-bar" data-i="2"></div>
+          </div>
+        </div>
+        <figure class="hero-art" aria-hidden="true">
+          <img src="images/about-bg.jpg" width="300" height="300" alt="Neon jungle silhouette with glowing vines">
+        </figure>
+      </div>
+    </section>
+	
+	
+  <!-- Loader -->
+  <div id="loading-screen">
+    <h1>Happy Journey</h1>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+    <!-- ADVENTURE CARDS -->
+    <section id="adventures" class="adventures" aria-label="Adventure showcase">
+      <div class="wrap">
+        <h2 class="section-title">Pick Your Neon Quest</h2>
+        <div class="cards-grid">
+
+          <!-- Card 1 -->
+          <article class="adventure-card" data-type="trek" tabindex="0" aria-labelledby="adv-trek">
+            <figure class="card-media">
+              <img src="images/img-3.jpg" alt="Hiking trail for youngsters">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-trek">Best Hiking Spots for Youngsters</h3>
+              <p>Seek not just the destination, but the rhythm of the journey.</p>
+              <div class="card-tags"><span>#hike</span><span>#bio-glow</span><span>#altitude</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="adventure-card" data-type="camp" tabindex="0" aria-labelledby="adv-camp-1">
+            <figure class="card-media">
+              <img src="images/Hampi.jpg" alt="Majestic mountain peaks">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-camp-1">Majestic Peaks</h3>
+              <p>Conquer the mountains, feel alive.</p>
+              <div class="card-tags"><span>#Conquer</span><span>#ClimbOn</span><span>#GoldenHour</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+          <article class="adventure-card" data-type="camp" tabindex="0" aria-labelledby="adv-camp-2">
+            <figure class="card-media">
+              <img src="images/Adventure2.jpg" alt="Waterfall in mountains">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-camp-2">Waterfall from Mountain</h3>
+              <p>Nature's Rush - Discover waterfalls hidden in the heights.</p>
+              <div class="card-tags"><span>#Discover</span><span>#WaterfallHunting</span><span>#GoWithTheFlow</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+          <article class="adventure-card" data-type="camp" tabindex="0" aria-labelledby="adv-camp-3">
+            <figure class="card-media">
+              <img src="images/traval12.jpg" alt="Scenic viewpoint">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-camp-3">Breathtaking Vistas</h3>
+              <p>Let the world unfold beneath you.</p>
+              <div class="card-tags"><span>#BreathtakingViews</span><span>#Vistas</span><span>#HorizonLine</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+          <article class="adventure-card" data-type="camp" tabindex="0" aria-labelledby="adv-camp-4">
+            <figure class="card-media">
+              <img src="images/travel.jpg" alt="Glow camping night">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-camp-4">A Journey in the Air</h3>
+              <p>Let the wind be your guide to a world of wonder.</p>
+              <div class="card-tags"><span>#UpAndAway</span><span>#FlyHigh</span><span>#Dreamscape</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+          <article class="adventure-card" data-type="camp" tabindex="0" aria-labelledby="adv-camp-5">
+            <figure class="card-media">
+              <img src="images/travel2.jpg" alt="Glow camping in jungle">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-camp-5">Flow of Fearless Spirit</h3>
+              <p>Navigating a world of wild water,where every turns holds a new story.</p>
+              <div class="card-tags"><span>#CurrentOfCourage</span><span>#ForceOfNature</span><span>#UntamedFlow</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+          <article class="adventure-card" data-type="camp" tabindex="0" aria-labelledby="adv-camp-6">
+            <figure class="card-media">
+              <img src="images/travel3.jpg" alt="Night glow camping area">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-camp-6">Standing On Top of the World</h3>
+              <p>Watching the world turn golden from the highest peak.</p>
+              <div class="card-tags"><span>#WorthTheView</span><span>#SolitudeAndSerenity</span><span>#LivingForThisMoment</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+          <article class="adventure-card" data-type="camp" tabindex="0" aria-labelledby="adv-camp-7">
+            <figure class="card-media">
+              <img src="images/travel4.jpg" alt="Tent glowing under stars">
+            </figure>
+            <div class="card-body">
+              <h3 id="adv-camp-7">A Grand Adventure Unfolds</h3>
+              <p>This is the view that made the whole journey worth it.</p>
+              <div class="card-tags"><span>#OceanDreams</span><span>#destinationPeace</span><span>#TheGreatVoyage</span></div>
+              <div class="card-actions"><a class="btn btn-small" href="book.html" data-boost>Book Now</a></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- JUNGLE STRIP -->
+    <section class="jungle-strip" aria-label="Interactive jungle strip">
+      <div class="wrap strip-wrap">
+        <h3 class="strip-title">Follow the Neon Current</h3>
+        <div class="strip-stage" aria-hidden="true">
+          <div class="leaf-rail" data-speed="0.5"></div>
+          <div class="leaf-rail" data-speed="0.9"></div>
+          <div class="leaf-rail" data-speed="1.3"></div>
+          <div class="cursor-trail" aria-hidden="true"></div>
+        </div>
+        <div class="strip-indicators" aria-hidden="true">
+          <div class="indicator" data-i="0"></div>
+          <div class="indicator" data-i="1"></div>
+          <div class="indicator" data-i="2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="tribe-cta" aria-label="Join the tribe">
+      <div class="wrap">
+        <div class="cta-inner">
+          <p class="cta-line">Only the wild survive the neon nights.</p>
+          <a class="btn btn-primary" href="book.html">Join the Tribe</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap footer-grid">
+      <div class="footer-box">
+        <h4>Quick Links</h4>
+        <a href="home.html"><i class="fas fa-angle-right"></i> Home</a>
+        <a href="about.html"><i class="fas fa-angle-right"></i> About</a>
+        <a href="package.html"><i class="fas fa-angle-right"></i> Packages</a>
+        <a href="book.html"><i class="fas fa-angle-right"></i> Book</a>
+      </div>
+
+      <div class="footer-box">
+        <h4>Contact</h4>
+        <a href="tel:+911234567890"><i class="fas fa-phone"></i> +91 12345 67890</a>
+        <a href="mailto:2023bcaaidsmann14707@poornima.edu.in"><i class="fas fa-envelope"></i> 2023bcaaidsmann14707@poornima.edu.in</a>
+      </div>
+
+      <div class="footer-box">
+        <h4>Follow</h4>
+        <a href="https://www.linkedin.com/in/mann-sharma-5425b9290"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/MannSharma-lab"><i class="fab fa-github"></i> Github</a>
+      </div>
+    </div>
+
+    <p class="credit">Powered by Mann Sharma <strong>TravelNexus</strong> • © <span id="year"></span></p>
+  </footer>
+
+  <!-- NOSCRIPT -->
+  <noscript>
+    <style>
+      canvas { display: none !important; }
+      .hero-art img, .card-media img { opacity: 1; }
+    </style>
+    <div style="padding:12px;background:#071224;color:#ffdede;text-align:center;">
+      For the full Neon Jungle experience, enable JavaScript.
+    </div>
+  </noscript>
+
+  <!-- Page JS -->
+  <script src="js/adventure.js" defer></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

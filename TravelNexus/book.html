@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>TravelNexus — Book Your Trip</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/book.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="nav">
+      <a class="logo" href="#"><i class="fa-solid fa-compass"></i> TravelNexus</a>
+      <nav>
+        <a href="home.html">Home</a>
+		<a href="package.html">Packages</a>
+		<a href="book.html"class="active">Book</a>
+        <a href="about.html">About</a>  
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero Copy ===== -->
+  <section class="hero">
+    <span class="badge"><i class="fa-solid fa-sparkles"></i> Premium Booking</span>
+    <h1>Summon your dream trip through the portal — smooth steps, live pricing, and luxury vibes.</h1>
+    <p>Fill the details below. Your draft auto-saves locally. Backend & database will connect next.</p>
+  </section>
+  
+  
+  <!-- Loader -->
+  <div id="loading-screen">
+    <h1>Happy Journey</h1>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- ===== Booking Card ===== -->
+  <main class="wrap">
+    <div class="card" id="card">
+
+      <!-- Left: Form -->
+      <div class="form-side">
+        <!-- Progress -->
+        <div class="progress" aria-label="Progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-rail"><div class="progress-bar" id="progressBar"></div></div>
+          <div class="steps" id="steps">
+            <div class="step active" data-step="0"><span class="dot">1</span> Personal</div>
+            <div class="step" data-step="1"><span class="dot">2</span> Trip</div>
+            <div class="step" data-step="2"><span class="dot">3</span> Confirm</div>
+          </div>
+        </div>
+
+        <form id="bookingForm" novalidate>
+          <!-- STEP 1 -->
+          <section class="form-step" data-step="0">
+            <div class="grid g-2">
+              <div class="field">
+                <input id="fullName" class="input" type="text" placeholder=" " autocomplete="name"/>
+                <label for="fullName" class="label">Full name</label>
+                <div class="error-msg">Please enter 2–40 characters (letters & spaces).</div>
+              </div>
+              <div class="field">
+                <input id="age" class="input" type="number" min="5" max="100" placeholder=" "/>
+                <label for="age" class="label">Age</label>
+                <div class="error-msg">Age must be between 5 and 100.</div>
+              </div>
+            </div>
+
+            <div class="grid g-2">
+              <div class="field">
+                <select id="gender" class="input" placeholder=" ">
+                  <option value="">Select</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+                <label for="gender" class="label">Gender</label>
+                <div class="error-msg">Please select gender.</div>
+              </div>
+              <div class="field">
+                <input id="email" class="input" type="email" placeholder=" " autocomplete="email"/>
+                <label for="email" class="label">Email</label>
+                <div class="error-msg">Enter a valid email address.</div>
+              </div>
+            </div>
+
+            <div class="grid g-2">
+              <div class="field">
+                <input id="phone" class="input" type="tel" placeholder=" "/>
+                <label for="phone" class="label">Phone </label>
+              </div>
+              <div class="field">
+                <input id="city" class="input" type="text" placeholder=" "/>
+                <label for="city" class="label">City</label>
+                <div class="error-msg">City is required.</div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn secondary" type="button" disabled><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button class="btn next" type="button">Next <i class="fa-solid fa-arrow-right"></i><span class="sparkle"></span></button>
+            </div>
+          </section>
+
+          <!-- STEP 2 -->
+          <section class="form-step" data-step="1" hidden>
+            <div class="grid g-2">
+              <div class="field">
+                <select id="destination" class="input" placeholder=" ">
+                  <option value="">Select destination</option>
+                  <option value="bali">Bali</option>
+                  <option value="eastjava">East Java</option>
+                  <option value="westpapua">West Papua</option>
+                  <option value="ladakh">Ladakh</option>
+                  <option value="goa">Goa</option>
+                </select>
+                <label for="destination" class="label">Destination</label>
+                <div class="error-msg">Please choose a destination.</div>
+              </div>
+
+              <!-- Custom Destination Field (hidden by default) -->
+              <div class="field" id="customDestField" style="display:none;">
+                <input id="customDest" class="input" type="text" placeholder=" "/>
+                <label for="customDest" class="label">Custom Destination</label>
+                <div class="error-msg">Please enter your destination.</div>
+              </div>
+
+              <div class="field">
+                <input id="members" class="input" type="number" min="1" max="20" placeholder=" "/>
+                <label for="members" class="label">Members</label>
+                <div class="error-msg">Enter members between 1 and 20.</div>
+              </div>
+            </div>
+
+            <div class="grid g-2">
+              <div class="field">
+                <input id="startDate" class="input" type="date" placeholder=" "/>
+                <label for="startDate" class="label">Trip date</label>
+                <div class="error-msg">Pick a valid future date.</div>
+              </div>
+              <div class="field">
+                <input id="days" class="input" type="number" min="1" max="30" placeholder=" "/>
+                <label for="days" class="label">Days</label>
+                <div class="error-msg">Days must be 1–30.</div>
+              </div>
+            </div>
+
+            <div class="grid g-2">
+              <div class="field">
+                <select id="timeSlot" class="input" placeholder=" ">
+                  <option value="">Select time</option>
+                  <option>Morning (6–10 AM)</option>
+                  <option>Midday (11–2 PM)</option>
+                  <option>Evening (4–8 PM)</option>
+                </select>
+                <label for="timeSlot" class="label">Preferred time</label>
+                <div class="error-msg">Please select a time slot.</div>
+              </div>
+              <div class="field">
+                <input id="pickup" class="input" type="text" placeholder=" "/>
+                <label for="pickup" class="label">Pickup point</label>
+                <div class="error-msg">Pickup point is required.</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label style="display:block; margin:6px 2px 4px;">Add-ons</label>
+              <div class="addons">
+                <label class="chip"><input type="checkbox" value="camping"> <i class="fa-solid fa-campground"></i> Camping Gear</label>
+                <label class="chip"><input type="checkbox" value="guide"> <i class="fa-solid fa-user-tie"></i> Private Guide</label>
+                <label class="chip"><input type="checkbox" value="offroad"> <i class="fa-solid fa-truck-monster"></i> 4x4 Off-road</label>
+                <label class="chip"><input type="checkbox" value="meals"> <i class="fa-solid fa-utensils"></i> Meals</label>
+				<label class="chip"><input type="checkbox" id="addon-jet" value="privatejet"><i class="fa-solid fa-plane"></i> Private Jet</label>
+                <label class="chip"><input type="checkbox" id="addon-yacht" value="yacht"><i class="fa-solid fa-ship"></i> Private Yacht</label>
+                <label class="chip"><input type="checkbox" id="addon-hotel" value="hotel"><i class="fa-solid fa-hotel"></i> 5 Star Luxury Hotel</label>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn secondary back" type="button"><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button class="btn next" type="button">Next <i class="fa-solid fa-arrow-right"></i><span class="sparkle"></span></button>
+            </div>
+          </section>
+
+          <!-- STEP 3 -->
+          <section class="form-step" data-step="2" hidden>
+            <div class="sum-card" id="summary"></div>
+            <label style="display:flex; align-items:center; gap:10px; margin-top:14px;">
+              <input id="agree" type="checkbox" />
+              <span class="tiny">I agree to the Terms & Privacy Policy.</span>
+            </label>
+            <div class="actions">
+              <button class="btn secondary back" type="button"><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button class="btn submit" type="submit" disabled>
+                <i class="fa-solid fa-shield-check"></i> Confirm & Submit
+                <span class="sparkle"></span>
+              </button>
+            </div>
+          </section>
+        </form>
+      </div>
+
+      <!-- Right: Live Summary -->
+      <aside class="summary-side">
+        <h3 style="margin:0 0 12px;">Live Estimate</h3>
+        <div class="sum-card" id="live">
+          <div class="sum-row"><span>Destination</span><strong id="live-dest">—</strong></div>
+          <div class="sum-row"><span>Members</span><strong id="live-mem">—</strong></div>
+          <div class="sum-row"><span>Dates</span><strong id="live-date">—</strong></div>
+          <div class="sum-row"><span>Days</span><strong id="live-days">—</strong></div>
+          <div class="sum-row"><span>Add-ons</span><strong id="live-addons">—</strong></div>
+          <div class="sum-price">
+            <span>Total (est.)</span>
+            <strong id="live-price">₹0</strong>
+          </div>
+          <div class="tiny"><i class="fa-solid fa-circle-info"></i> Final price may vary by availability, taxes & seasonality.</div>
+        </div>
+        <div class="seal"><i class="fa-solid fa-lock"></i> 256-bit encrypted</div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i> Booking saved locally. (DB next)</div>
+
+  <!-- External JS -->
+  <script src="js/book.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

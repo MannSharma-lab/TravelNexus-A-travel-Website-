@@ -1,0 +1,351 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --main: #8e44ad;
+  --bg: #0d0d0d;
+  --white: #fff;
+  --light: rgba(255,255,255,0.6);
+  --shadow: 0 4px 20px rgba(0,0,0,0.4);
+  --glass: rgba(255,255,255,0.08);
+}
+
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 10%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+}
+
+.header .logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.navbar a {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  color: var(--light);
+  transition: 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+  color: var(--main);
+}
+
+/* Hero Section */
+.hero {
+	position: relative;
+	text-align: center;
+	min-height: 0vh;
+	padding: 12rem 2rem 6rem;
+	background: url('images/about-bg.jpg') center/cover no-repeat;
+	background-attachment: fixed;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  margin-top: 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: var(--shadow);
+  background: rgba(0,0,0,0.4);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+/* Why Choose Us Section */
+.why-choose {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  top: 0;
+  padding: 5rem 10%;
+  align-items: center;
+}
+
+.why-choose .content {
+  flex: 1 1 45%;
+}
+
+.why-choose .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-choose .content span {
+  color: var(--main);
+}
+
+.why-choose .content p {
+  color: var(--light);
+  margin-bottom: 2rem;
+}
+
+/* Counter Box */
+.counters {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.counter-box {
+  flex: 1 1 150px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.counter-box h3 {
+  font-size: 2rem;
+  color: var(--main);
+  margin-bottom: 0.5rem;
+}
+
+.counter-box p {
+  color: var(--light);
+}
+
+.why-choose .image {
+  flex: 1 1 45%;
+}
+
+.why-choose .image img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* Timeline Section */
+.timeline {
+  padding: 5rem 10%;
+  text-align: center;
+}
+
+.timeline h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.timeline-item {
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+.timeline-item span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--main);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 5rem 10%;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.review-card {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  min-height: 200px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.review-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.review-card p {
+  font-size: 1rem;
+  color: var(--light);
+  margin-bottom: 1rem;
+}
+
+.review-card h3 {
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--main), 0 0 20px var(--main);
+}
+
+.reviews {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 3rem 10%;
+}
+
+.footer .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer .box {
+  flex: 1 1 200px;
+}
+
+.footer h2 {
+  margin-bottom: 1rem;
+  color: var(--main);
+}
+
+.footer a, .footer p {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--main);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+}
+
+.scroll-to-top:hover {
+  background: var(--white);
+  color: var(--main);
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+  .navbar { display: none; }
+  .hamburger { display: flex; }
+  .nav-drawer { display: flex; }
+  .why-choose { flex-direction: column; }
+  .hero { padding-top: 8rem; }
+}
+
+/* Aurora waves */
+.aurora-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(142,68,173,0.6), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(0,240,255,0.6), transparent 60%),
+              radial-gradient(circle at 50% 90%, rgba(0,200,150,0.5), transparent 60%);
+  animation: auroraMove 15s ease-in-out infinite alternate;
+  filter: blur(120px);
+  z-index: -3;
+}
+
+/* Floating animation */
+@keyframes auroraMove {
+  0% { transform: translateY(-20px) scale(1); }
+  100% { transform: translateY(40px) scale(1.2); }
+}
+
+/* Neon orbs canvas */
+#orbs-canvas {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Particle layer */
+#particles-js {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.counter-box,
+.timeline-item,
+.review-card,
+.image{
+	transition: transform 0.3s ease;
+}
+
+.counter-box:hover,
+.timeline-item:hover,
+.review-card:hover,
+.image:hover{
+	transform: translateY(-10px);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}

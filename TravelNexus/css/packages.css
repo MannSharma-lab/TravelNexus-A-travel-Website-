@@ -1,0 +1,227 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body.dark-theme {
+  background: #0a0a0a;
+  color: #f0f0f0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Starfield Background */
+#stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  background: black;
+}
+
+/* Header*/
+.header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 1.5rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.header .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 10px #8e44ad;
+}
+
+.header .navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.header .navbar a {
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.header .navbar a:hover,
+.header .navbar a.active {
+  color: #8e44ad;
+  text-shadow: 0 0 8px #8e44ad;
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  padding: 12rem 2rem 8rem; /* extra padding because header is fixed */
+  background: rgba(0,0,0,0.6);
+}
+.heading h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #8e44ad, 0 0 30px #8e44ad;
+}
+
+/* Filter Buttons */
+.filters {
+  text-align: center;
+  margin: 3rem 0;
+}
+.filters .filter-btn {
+  padding: 1rem 2.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  backdrop-filter: blur(8px);
+}
+.filters .filter-btn.active,
+.filters .filter-btn:hover {
+  background: #8e44ad;
+  box-shadow: 0 0 20px #8e44ad, 0 0 40px #8e44ad;
+}
+
+/*  Packages */
+.packages {
+  padding: 4rem 8%;
+  position: relative;
+  z-index: 1;
+}
+.packages .heading-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  text-shadow: 0 0 10px #8e44ad;
+}
+
+/*  Cards */
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.box {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(15px);
+}
+.box:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 0 30px #8e44ad, 0 0 60px #8e44ad;
+}
+.box .image {
+  height: 220px;
+  overflow: hidden;
+}
+.box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.box:hover .image img {
+  transform: scale(1.2);
+}
+.box .content {
+  padding: 2rem;
+  text-align: center;
+}
+.box .content h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.box .content p {
+  font-size: 1.4rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+/*  Book Now Button */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  background: #8e44ad;
+  color: #fff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #a258d4;
+  box-shadow: 0 0 15px #8e44ad, 0 0 30px #8e44ad;
+}
+
+/*  Load More */
+.load-more {
+  text-align: center;
+  margin-top: 3rem;
+}
+.load-more .btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid #8e44ad;
+}
+.load-more .btn:hover {
+  background: #8e44ad;
+}
+
+/*  Footer */
+.footer {
+  margin-top: 5rem;
+  background: rgba(0,0,0,0.7);
+  padding: 4rem 8%;
+  color: #fff;
+  text-align: center;
+}
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.footer .box h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.footer .box a {
+  display: block;
+  font-size: 1.4rem;
+  color: #aaa;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+.footer .box a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #8e44ad;
+}
+.footer .credit {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #aaa;
+}
+.footer .credit span {
+  color: #8e44ad;
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages | TravelNexus</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/packages.css">
+  
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  
+</head>
+<body class="dark-theme">
+
+  <!-- Background Canvas for Stars -->
+  <canvas id="stars"></canvas>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="home.html" class="logo">TravelNexus</a>
+
+    <nav class="navbar">
+      <a href="home.html">home</a>
+      <a href="about.html">about</a>
+      <a href="package.html" class="active">package</a>
+      <a href="book.html">book</a>
+    </nav>
+  </header>
+
+  <!-- Heading -->
+  <div class="heading" style="background:url(images/footer-bg.jpg) no-repeat">
+    <h1>Packages</h1>
+  </div>
+
+  <!--  Filters -->
+  <section class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="adventure">Adventure</button>
+    <button class="filter-btn" data-filter="Couples">Couples</button>
+    <button class="filter-btn" data-filter="scenery">Scenery</button>
+    <button class="filter-btn" data-filter="luxury">Luxury</button>
+  </section>
+
+
+
+
+  <!-- Loader -->
+  <div id="loading-screen">
+    <h1>Happy Journey</h1>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+
+  <!-- Packages -->
+  <section class="packages">
+    <h1 class="heading-title">Top Destinations</h1>
+
+    <div class="box-container">
+
+      <!-- Honeymoon -->
+      <div class="box card" data-category="Couples">
+        <div class="image">
+          <img src="images/about-bg(1).jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Best Sunset Place for Couples</h3>
+          <p>Chase sunsets, not trends.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="Couples">
+        <div class="image">
+          <img src="images/honeymoon2.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Beach Candle Light Dinner</h3>
+          <p>Romantic Beach Dining- Love, laughter, and candlelight by the sea.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="Couples">
+        <div class="image">
+          <img src="images/Gokarna-couple.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Evening Beach View </h3>
+          <p>Evening Serenity- Watch the waves dance under soft twilight.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="Couples">
+        <div class="image">
+          <img src="images/honeymoon.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Beautiful Tents for Stay</h3>
+          <p>Cozy Beach Retreat- Sleep under the stars in luxury tents.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Scenery -->
+      <div class="box card" data-category="scenery">
+        <div class="image">
+          <img src="images/img-2.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Most Beautiful Scenic Locations</h3>
+          <p>Let your footprints be your story, and the world your canvas.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	   <div class="box card" data-category="scenery">
+        <div class="image">
+          <img src="images/street1.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Scenic Heights</h3>
+          <p>Where mountains meet the sky in perfect harmony.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	   <div class="box card" data-category="scenery">
+        <div class="image">
+          <img src="images/river.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Tranquil Trails</h3>
+          <p>Mountains embracing rivers in serene landscapes.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="scenery">
+        <div class="image">
+          <img src="images/Amer Fort-Jaipur.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Historic Beauty</h3>
+          <p>Explore heritage with rivers flowing beside it.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Adventure -->
+      <div class="box card" data-category="adventure">
+        <div class="image">
+          <img src="images/img-3.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Best Hiking Spots for Youngsters</h3>
+          <p>Seek not just the destination, but the rhythm of the journey.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+
+<div class="box card" data-category="adventure">
+        <div class="image">
+          <img src="images/Hampi.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Majestic Peaks</h3>
+          <p>Conquer the mountains,feel alive.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="adventure">
+        <div class="image">
+          <img src="images/Adventure2.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Waterfall from Mountain</h3>
+          <p>Nature's Rush- Discover waterfalls hidden in the heights.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="adventure">
+        <div class="image">
+          <img src="images/traval12.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Breathtaking Vistas</h3>
+          <p>Let the world unfold beneath you.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+      <!-- Luxury -->
+      <div class="box card" data-category="luxury">
+        <div class="image">
+          <img src="images/luxury2.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Luxury Resorts & Villas</h3>
+          <p>Indulge yourself in world-class comfort & elegance.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="luxury">
+        <div class="image">
+          <img src="images/luxury1.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Luxury Villa/ Stay</h3>
+          <p>Exclusive Sanctuary- A secluded paradise for the world's elite.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="luxury">
+        <div class="image">
+          <img src="images/taj-rambagh-palace-jaipur.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Regal Retreat</h3>
+          <p>Where sophiscation and grandeur meet timeless elegance.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+	  
+	  <div class="box card" data-category="luxury">
+        <div class="image">
+          <img src="images/Oberoi-Udaivilas.jpg" alt="">
+        </div>
+        <div class="content">
+          <h3>Prestigious Escape</h3>
+          <p>A haven of oplence designed for the refiend few.</p>
+          <a href="book.html" class="btn">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Load More -->
+    <div class="load-more">
+      <span class="btn">Load More</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="box-container">
+
+      <div class="box">
+        <h3>Quick Links</h3>
+        <a href="home.html"><i class="fas fa-angle-right"></i> Home</a>
+        <a href="about.html"><i class="fas fa-angle-right"></i> About</a>
+        <a href="package.html"><i class="fas fa-angle-right"></i> Package</a>
+        <a href="book.html"><i class="fas fa-angle-right"></i> Book</a>
+      </div>
+
+      <div class="box">
+        <h3>Contact Info</h3>
+        <a href="#"><i class="fas fa-phone"></i> +123-456-7890 </a>
+        <a href="#"><i class="fas fa-envelope"></i>2023bcaaidsmann14707@poornima.edu.in</a>
+        <a href="#"><i class="fas fa-map"></i> Poornima University, Jaipur, Bharat - 302022</a>
+      </div>
+   
+      <div class="box">
+        <h3>Follow Us</h3>
+        <a href="https://github.com/MannSharma-lab"><i class="fab fa-github"></i>Github</a>
+        <a href="https://www.linkedin.com/in/mann-sharma-5425b9290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i> LinkedIn</a>              
+      </div>
+    </div>
+  
+    <div class="credit"> Created by Mann Sharma<span>TravelNexus.© 2025</span> | All rights reserved! </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="js/packages.js"></script>
+  
+  <script src="js/script.js"></script>
+  
+  
+  
+</body>
+</html>
